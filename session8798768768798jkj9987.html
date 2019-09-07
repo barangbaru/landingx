@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MEOWSITE DEMO PAGE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/scss" href="assets/css/gen.scss">
+	<link rel="stylesheet" type="text/css" href="assets/css/gen.css">
+	<script src="assets/js/gen.js"></script>
+	<script language="javascript" type="text/javascript">
+  document.oncontextmenu=RightMouseDown;
+  document.onmousedown = mouseDown;
+
+  function mouseDown(e) {
+      if (e.which==3) {//righClick
+      alert("Disabled - sorry we lock this thinks");
+   }
+}
+function RightMouseDown() { return false;}
+window.addEventListener("keydown",function(e){if(e.ctrlKey&&(e.which==65||e.which==66||e.which==67||e.which==73||e.which==80||e.which==83||e.which==85||e.which==86)){e.preventDefault()}});document.keypress=function(e){if(e.ctrlKey&&(e.which==65||e.which==66||e.which==67||e.which==73||e.which==80||e.which==83||e.which==85||e.which==86)){}return false}
+</script>
+    <script>
+				function startTime() {
+    var today = new Date();
+    var hr = today.getHours();
+    var min = today.getMinutes();
+    var sec = today.getSeconds();
+    ap = (hr < 12) ? "<span>AM</span>" : "<span>PM</span>";
+    hr = (hr == 0) ? 12 : hr;
+    hr = (hr > 12) ? hr - 12 : hr;
+    //Add a zero in front of numbers<10
+    hr = checkTime(hr);
+    min = checkTime(min);
+    sec = checkTime(sec);
+    document.getElementById("clock").innerHTML = hr + ":" + min + ":" + sec + " " + ap;
+
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    var days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+    var curWeekDay = days[today.getDay()];
+    var curDay = today.getDate();
+    var curMonth = months[today.getMonth()];
+    var curYear = today.getFullYear();
+    var date = curWeekDay+", "+curDay+" "+curMonth+" "+curYear;
+    document.getElementById("date").innerHTML = date;
+
+    var time = setTimeout(function(){ startTime() }, 500);
+}
+function checkTime(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
+</script>
+</head>
+<body onload="startTime()" class="is-preload">
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,700|Merriweather' rel='stylesheet' type='text/css'>
+<div id="clockdate">
+  <div class="clockdate-wrapper">
+    <div id="clock"></div>
+    <div id="date"></div>
+  </div>
+</div>
+<h1 style="font-family: 'Raleway', Roboto;">OUR PRODUCTS<span id="hover">
+
+  </span></h1>
+
+<p style="font-family: sans-serif; color: #fff; padding-left: 10px;">An implementation of your needs. Please give credit to <a href="https://meowsite.com" style="color:#efefef; text-decoration: none;">www.meowsite.com</a> if you use my products.</p>
+<div id="all">
+  <div class="view view-first">
+    <img src="assets/img/elearning.png" />
+    <div class="mask">
+      <h2>E-Learning</h2>
+      <p>E-Learning demo site. <br>trial and contact us</p>
+      <a href="#popup1" class="info">Trial</a>
+    </div>
+	<div id="popup1" class="overlay">
+	<div class="popup">
+		<h2>Choose your business</h2><br>
+		<a href="error.html"  target="_blank" class="button">Corporate</a>
+		<a href="error.html"  target="_blank" class="button">Goverment</a>
+		<a href="https://learning.demo.meowsite.com"  target="_blank" class="button">Small Business</a>
+		<a href="error.html"  target="_blank" class="button">Personal</a>
+		<a class="close" href="#">&times;</a>
+	</div>
+</div>
+  </div>
+
+
+  <div class="view view-second">
+    <img src="https://static1.squarespace.com/static/5aea79c52487fde9b8efd0b1/t/5bb6b38e4785d3a94fdb56b0/1538700175156/midtown.png" />
+    <div class="mask"></div>
+    <div class="content">
+      <h2>HRIS</h2>
+      <p>Human Resources Information System</p>
+      <a href="error.html"  target="_blank" class="info">Trial</a>
+    </div>
+  </div>
+
+
+  <div class="view view-tenth">
+    <img src="assets/img/eklinik.png" />
+    <div class="mask">
+      <h2>DKLINIK</h2>
+      <p>Hospital Application System.</p>
+      <a href="http://klinik.dmproduk.id:3080"  target="_blank"  class="info">Trial</a>
+    </div>
+  </div>
+
+  <div class="view view-second">
+    <img src="assets/img/eproject.png" />
+    <div class="mask"></div>
+    <div class="content">
+      <h2 id="testimonials">E-PROJECT</h2>
+      <p id="url">&ldquo;Project Management System&rdquo;</p>
+      <a href="https://project.demo.meowsite.com"  target="_blank"  class="info">Trial</a>
+    </div>
+  </div>
+</div>
+
+</div>
+  <script src="assets/js/main.js"></script>
+
+  <svg viewbox="0 0 100 20">
+  <defs>
+    <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="5%" stop-color="#326384"/>
+      <stop offset="95%" stop-color="#123752"/>
+    </linearGradient>
+    <pattern id="wave" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
+      <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z" mask="url(#mask)" fill="url(#gradient)">
+        <animateTransform
+            attributeName="transform"
+            begin="0s"
+            dur="1.5s"
+            type="translate"
+            from="0,0"
+            to="40,0"
+            repeatCount="indefinite" />
+      </path>
+    </pattern>
+  </defs>
+  <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#wave)"  fill-opacity="0.6">DEMO SITE</text>
+  <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#gradient)" fill-opacity="0.1">DEMO SITE</text>
+</svg>
+
+</body>
+</html>
